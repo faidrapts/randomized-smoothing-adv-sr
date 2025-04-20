@@ -1,0 +1,1 @@
+This directory is used to host the imagenet-mini 1000 dataset, for demonstration purposes the folder on GitHub only includes one image.
