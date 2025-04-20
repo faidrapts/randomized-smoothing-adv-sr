@@ -29,11 +29,7 @@ findings show that randomized smoothing is an effective adversarial defense in s
 it achieves results with better perceived visual quality than adversarial training.
 
 ## Introduction
-Deep neural networks are vulnerable to adversarial attacks—small perturbations that cause incorrect outputs. While adversarial training is common, it lacks guarantees against unknown attacks. Randomized smoothing offers:
-
-- **Certifiable robustness** within a proven radius
-- **Applicability** to inverse problems like super-resolution
-- **Better perceptual quality** under attack
+Deep neural networks for super-resolution are vulnerable to adversarial attacks - subtle input perturbations that cause dramatic output distortions while remaining imperceptible to humans. While empirical defenses like adversarial training exist, they lack theoretical guarantees (especially against unknown attacks) and often degrade output quality. This repository implements **randomized smoothing for super-resolution**. Randomized smoothing offers certifiable robustness within a proven $ℓ_2$-radius.
 
 ## Repository Structure
 
@@ -84,7 +80,7 @@ g(y) = \mathbb{E}_{\delta \sim \mathcal{N}(0, \sigma^2 I)}[f(y+\delta)] \approx 
 - Training on noisy inputs is crucial for tight bounds
 - Noise level σ controls robustness/accuracy trade-off
 
-## Problem Statement
+### Problem Statement
 We evaluate randomized smoothing on single-image super-resolution (SISR), an ill-posed inverse problem where:
 
 - Multiple high-resolutions can match one low-resolution input
@@ -140,7 +136,7 @@ We evaluate randomized smoothing on single-image super-resolution (SISR), an ill
 ## Conclusion
 This work demonstrates that:
 
-1. Randomized smoothing can be effectively adapted to super-resolution
+1. Randomized smoothing can be effectively adapted to inverse problems, such as super-resolution
 2. Provides certifiable robustness against ℓ₂ attacks
 3. Produces better visual quality than adversarial training
 4. Offers flexible robustness-accuracy trade-off via σ_f
